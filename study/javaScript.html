@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScriptの練習</title>
+    </head>
+    <body>
+         <form name="myForm">
+         <label>名前</label>
+         <input type="text" name="name"/><br>
+         
+         <label>メールアドレス</label>   
+         <input type="text" name="mail"/> <br>  
+            
+         <label>20代</label><input type="radio" name="age"  value="20"/>   
+         <label>30代</label><input type="radio" name="age"  value="30"/>   
+         <lebel>40代</lebel><input type="radio" name="age"  value="40"/>  
+         <lebel>50代</lebel><input type="radio" name="age"  value="50"/><br>
+
+            <input type="checkbox" name="phone" value="iPhone" />iPhone
+            <input type="checkbox" name="phone" value="andoroid" />andoroid
+            <input type="checkbox" name="phone" value="flip-phone" />flip-phone
+            <input type="checkbox" name="phone" value="other" />other
+            </form>
+            <br>       
+
+         <button id="btn">実行</button>
+
+         <script>
+            const btn =document.getElementById('btn');
+
+            btn.addEventListener('click', () => {
+                const form = document.forms.myForm;
+                console.log(form.name.value); //名前の取得
+                console.log(form.mail.value); 
+                console.log(form.age.value);
+                form.phone.forEach(item => {
+                    if(item.checked) console.log(item.value);
+                })
+            });
+         </script>
+    </body>
+</html>
